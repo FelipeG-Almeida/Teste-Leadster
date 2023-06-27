@@ -2,6 +2,8 @@ import {
 	Button,
 	Buttons,
 	Nav,
+	Pagination,
+	PaginationButton,
 	Selection,
 	SelectionOption,
 	Videos,
@@ -9,16 +11,24 @@ import {
 } from './style';
 import videos from '../../../videos.json';
 import VideoCard from '../videoCard/videoCard';
+import { useState } from 'react';
 
 export default function Webinars(): JSX.Element {
+	const [activeButton, setActiveButton] = useState(1);
+
+	function handleClickButton(index: number) {
+		setActiveButton(index);
+	}
+
 	function videoList(): JSX.Element[] {
 		const videoCards = [];
 
-		for (let i = 0; i < 9; i++) {
+		for (let i = (activeButton - 1) * 9; i < (activeButton * 9); i++) {
 			const video = videos[i];
-			videoCards.push(<VideoCard key={video.title} description={video.description} />);
+			videoCards.push(
+				<VideoCard key={video.title} description={video.description} />
+			);
 		}
-
 		return videoCards;
 	}
 
@@ -53,6 +63,33 @@ export default function Webinars(): JSX.Element {
 				</div>
 			</Nav>
 			<Videos>{videoList()}</Videos>
+			<Pagination>
+				<span>Página</span>
+				<PaginationButton
+					isActive={activeButton === 1}
+					onClick={() => handleClickButton(1)}
+				>
+					1
+				</PaginationButton>
+				<PaginationButton
+					isActive={activeButton === 2}
+					onClick={() => handleClickButton(2)}
+				>
+					2
+				</PaginationButton>
+				<PaginationButton
+					isActive={activeButton === 3}
+					onClick={() => handleClickButton(3)}
+				>
+					3
+				</PaginationButton>
+				<PaginationButton
+					isActive={activeButton === 4}
+					onClick={() => handleClickButton(4)}
+				>
+					4
+				</PaginationButton>
+			</Pagination>
 		</WebinarsSection>
 	);
 }

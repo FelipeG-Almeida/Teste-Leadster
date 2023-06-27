@@ -11,12 +11,10 @@ export const WebinarsSection = styled.section`
 `;
 
 export const Nav = styled.div`
-	border-bottom: 2px solid #dfe2e5;
 	display: flex;
 	justify-content: space-between;
 	font-size: 0.9rem;
 	font-weight: 500;
-	padding-bottom: 18px;
 `;
 
 export const Buttons = styled.ul`
@@ -31,7 +29,7 @@ export const Button = styled.button`
 	border-radius: 15px;
 	color: var(--dark-blue);
 	cursor: pointer;
-	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-family: inherit;
 	font-weight: 500;
 	padding: 5px 20px;
 	&:hover {
@@ -43,7 +41,7 @@ export const Button = styled.button`
 export const Selection = styled.select`
 	border: 1px solid var(--dark-blue);
 	border-radius: 10px;
-	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-family: inherit;
 	font-size: 0.9rem;
 	font-weight: 500;
 	margin-left: 10px;
@@ -51,14 +49,37 @@ export const Selection = styled.select`
 `;
 
 export const SelectionOption = styled.option`
-	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-family: inherit;
 	font-size: 0.9rem;
 	font-weight: 500;
 `;
 
 export const Videos = styled.div`
+	border-bottom: 2px solid #dfe2e5;
+	border-top: 2px solid #dfe2e5;
 	display: grid;
-	gap: 30px;
-	grid-template-columns: repeat(auto-fit, minmax(362px, 1fr));
+	gap: 25px;
+	grid-template-columns: repeat(auto-fit, 340px);
+	justify-content: center;
 	margin: 15px 0;
+	padding: 75px 0;
 `;
+
+export const Pagination = styled.nav`
+	align-items: center;
+	column-gap: 10px;
+	display: flex;
+	justify-content: center;
+`
+
+export const PaginationButton = styled.button<{ isActive: boolean }>`
+	background-color: #fff;
+	border: ${({isActive}) => (isActive? 'solid 1px var(--blue)' : 'none')};
+	border-radius: 5px;
+	color: ${({isActive}) => (isActive? 'var(--blue)' : 'var(--dark-blue)')};
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 1rem;
+	font-weight: ${({isActive}) => (isActive? '700' : '500')};;
+	padding: 5px 10px;
+`

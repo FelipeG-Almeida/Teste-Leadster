@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import play from '../../assets/play.png';
 
 export const ImageWrapper = styled.div`
 	border-radius: 20px 20px 0 0;
@@ -20,7 +19,6 @@ export const ImageWrapper = styled.div`
 		width: 100%;
 		height: 100%;
 		background-color: rgba(154, 211, 253, 0.5);
-		background-image: url(${play});
 		opacity: 0;
 		transition: opacity 0.3s ease;
 	}
@@ -33,7 +31,7 @@ export const Card = styled.figure`
 		rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 	cursor: pointer;
 	transition: 0.25s all;
-	width: 362px;
+	width: 340px;
 	&:hover {
 		transform: scale(1.025);
 	}
@@ -44,10 +42,10 @@ export const Card = styled.figure`
 
 export const Caption = styled.figcaption`
 	color: var(--dark-blue);
-	font-size: 1.2rem;
+	font-size: 1rem;
 	font-weight: 600;
 	padding: 20px 30px;
-	width: 362px;
+	width: 340px;
 	${Card}:hover & {
 		color: var(--blue);
 	}
