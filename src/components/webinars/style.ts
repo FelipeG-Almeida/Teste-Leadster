@@ -62,27 +62,3 @@ export const Videos = styled.div`
 	grid-template-columns: repeat(auto-fit, minmax(362px, 1fr));
 	margin: 15px 0;
 `;
-
-export const Card = styled.figure`
-	box-sizing: border-box;
-	border-radius: 20px;
-	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-		rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-	cursor: pointer;
-	transition: 0.25s all;
-	width: 362px;
-	&:hover {
-		transform: scale(1.025)
-	}
-`;
-
-export const Caption = styled.figcaption`
-	color: var(--dark-blue);
-	font-size: 1.2rem;
-	font-weight: 600;
-	padding: 20px 30px;
-	width: 362px;
-	${Card}:hover & {
-		color: var(--blue);
-	}
-`;
