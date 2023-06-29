@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
 export const ModalWrapper = styled.div`
-	height: 600px;
-	width: 600px;
+	height: 575px;
+	width: 450px;
 	z-index: 100;
+	@media screen and (max-width: 425px) {
+		height: 100%;
+	}
 `;
 
 export const Modal = styled.div`
@@ -13,6 +16,9 @@ export const Modal = styled.div`
 	height: 100%;
 	width: 100%;
 	z-index: 100;
+	@media screen and (max-width: 425px) {
+		border-radius: 0;
+	}
 `;
 
 export const ModalOverlay = styled.div`
@@ -37,13 +43,13 @@ export const ModalHeader = styled.div`
 
 export const ModalHeaderText = styled.h3`
 	color: var(--dark-blue);
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	font-weight: 600;
 `
 
 export const CloseButton = styled.a`
 	color: #838ead;
-	font-size: 1.25rem;
+	font-size: 1rem;
 	position: absolute;
 	top: 10%;
 	right: 3%;
@@ -56,6 +62,10 @@ export const ModalDetails = styled.div`
 	row-gap: 10px;
 `
 
+export const ModalSpan = styled.span`
+	color: var(--blue)
+`
+
 export const ModalTopic = styled.h4`
 	border-bottom: 1px solid #e6e9eb;
 	color: var(--dark-blue);
@@ -66,5 +76,5 @@ export const ModalTopic = styled.h4`
 
 export const Description = styled.p`
 	color: var(--dark-blue);
-	font-size: 1rem;
+	font-size: 0.9rem;
 `

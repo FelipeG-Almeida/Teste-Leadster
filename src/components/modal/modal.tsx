@@ -8,6 +8,7 @@ import {
 	ModalDetails,
 	ModalTopic,
 	Description,
+	ModalSpan,
 } from './style';
 
 interface ModalProps {
@@ -34,7 +35,7 @@ export default function ModalComponent({
 				<Modal>
 					<ModalHeader>
 						<ModalHeaderText>
-							<span>Webinar:</span> {title}
+							<ModalSpan>Webinar:</ModalSpan> {title}
 						</ModalHeaderText>
 						<CloseButton href="#" onClick={handleCloseClick}>
 							X

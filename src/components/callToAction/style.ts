@@ -8,8 +8,11 @@ export const CTASection = styled.section`
     display: flex;
     justify-content: space-between;
     padding: 25px 10%;
-	@media screen and (max-width: 1439px) {
+	@media screen and (max-width: 1023px) {
 		padding: 75px 5%;
+        flex-direction: column;
+        row-gap: 20px;
+        text-align: center;
 	}
 `
 
@@ -17,6 +20,17 @@ export const ImageWrapper = styled.div`
     position: relative;
     height: 600px;
     width: 80%;
+    @media screen and (max-width: 767px) {
+        height: 300px;
+        width: 100%;
+    }
+`
+
+export const CTADiv = styled.div`
+    width: 50%;
+    @media screen and (max-width: 767px) {
+        width: 80%;
+    }
 `
 
 export const Title = styled.h2`
@@ -37,6 +51,11 @@ export const Details = styled.div`
     column-gap: 10px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr min-content;
+    @media screen and (max-width: 767px) {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        row-gap: 10px;
+    }
 `
 
 export const CTAButton = styled.button`
@@ -50,6 +69,9 @@ export const CTAButton = styled.button`
     height: 50px;
     margin: 20px 0;
     text-transform: uppercase;
+    @media screen and (max-width: 767px) {
+        width: 100%;
+    }
 `
 
 export const CTADetails = styled.div`

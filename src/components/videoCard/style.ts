@@ -31,22 +31,29 @@ export const Card = styled.figure`
 		rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 	cursor: pointer;
 	transition: 0.25s all;
-	width: 340px;
+	width: 300px;
 	&:hover {
 		transform: scale(1.025);
 	}
 	&:hover ${ImageWrapper}::before {
 		opacity: 1;
 	}
+	@media screen and (max-width: 767px) {
+		width: 280px;
+	}
 `;
 
 export const Caption = styled.figcaption`
 	color: var(--dark-blue);
-	font-size: 1rem;
+	font-size: 0.9rem;
 	font-weight: 600;
 	padding: 20px 30px;
-	width: 340px;
+	width: 300px;
 	${Card}:hover & {
 		color: var(--blue);
+	}
+	@media screen and (max-width: 767px) {
+		font-size: 0.8rem;
+		width: 280px;
 	}
 `;

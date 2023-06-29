@@ -5,7 +5,7 @@ export const WebinarsSection = styled.section`
 	display: flex;
 	flex-direction: column;
 	padding: 75px 10%;
-	@media screen and (max-width: 1439px) {
+	@media screen and (max-width: 1023px) {
 		padding: 75px 5%;
 	}
 `;
@@ -13,14 +13,21 @@ export const WebinarsSection = styled.section`
 export const Nav = styled.div`
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	font-size: 0.9rem;
 	font-weight: 500;
+	row-gap: 10px;
+	@media screen and (max-width: 767px) {
+		justify-content: center;
+	}
 `;
 
 export const Buttons = styled.ul`
 	display: flex;
 	column-gap: 12px;
+	flex-wrap: wrap;
 	list-style: none;
+	row-gap: 10px;
 `;
 
 export const Button = styled.button`
@@ -37,6 +44,15 @@ export const Button = styled.button`
 		color: var(--blue);
 	}
 `;
+
+export const SelectionDiv = styled.div`
+	align-items: center;
+	display: flex;
+	@media screen and (max-width: 767px) {
+		flex-direction: column;
+		row-gap: 10px;
+	}
+`
 
 export const Selection = styled.select`
 	border: 1px solid var(--dark-blue);
@@ -59,10 +75,13 @@ export const Videos = styled.div`
 	border-top: 2px solid #dfe2e5;
 	display: grid;
 	gap: 25px;
-	grid-template-columns: repeat(auto-fit, 340px);
+	grid-template-columns: repeat(auto-fit, 300px);
 	justify-content: center;
 	margin: 15px 0;
 	padding: 75px 0;
+	@media screen and (max-width: 767px) {
+		grid-template-columns: repeat(auto-fit, 280px);
+	}
 `;
 
 export const Pagination = styled.nav`

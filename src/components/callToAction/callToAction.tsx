@@ -12,6 +12,7 @@ import {
 	CTAButton,
 	CTADetails,
 	Small,
+	CTADiv
 } from './style';
 
 export default function CallToAction(): JSX.Element {
@@ -25,7 +26,7 @@ export default function CallToAction(): JSX.Element {
 					style={{ objectFit: 'contain' }}
 				/>
 			</ImageWrapper>
-			<div>
+			<CTADiv>
 				<Title>
 					Pronto para triplicar sua <b>Geração de Leads?</b>
 				</Title>
@@ -48,7 +49,7 @@ export default function CallToAction(): JSX.Element {
 						</Small>
 					</CTADetails>
 				</Details>
-			</div>
+			</CTADiv>
 		</CTASection>
 	);
 }

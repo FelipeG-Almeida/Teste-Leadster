@@ -8,6 +8,7 @@ import {
 	SelectionOption,
 	Videos,
 	WebinarsSection,
+	SelectionDiv
 } from './style';
 import videos from '../../../videos.json';
 import VideoCard from '../videoCard/videoCard';
@@ -74,7 +75,7 @@ export default function Webinars(): JSX.Element {
 						<Button>Mídia Paga</Button>
 					</li>
 				</Buttons>
-				<div>
+				<SelectionDiv>
 					<span>Ordenar por</span>
 					<Selection>
 						<SelectionOption>Data de Publicação</SelectionOption>
@@ -82,7 +83,7 @@ export default function Webinars(): JSX.Element {
 							Número de Visualizações
 						</SelectionOption>
 					</Selection>
-				</div>
+				</SelectionDiv>
 			</Nav>
 			<Videos>{videoList()}</Videos>
 			<Pagination>

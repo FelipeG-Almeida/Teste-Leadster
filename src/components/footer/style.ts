@@ -7,7 +7,7 @@ export const FooterSection = styled.footer`
     flex-direction: column;
     padding: 75px 10%;
     row-gap: 10px;
-	@media screen and (max-width: 1439px) {
+	@media screen and (max-width: 1023px) {
 		padding: 75px 5%;
 	}
 `
@@ -28,12 +28,24 @@ export const Links = styled.div`
     justify-content: space-between;
     margin: 40px 0;
     width: 100%;
+    @media screen and (max-width: 1023px) {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+    }
+
+    @media screen and (max-width: 767px) {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 `
 
 export const NavLinks = styled.nav`
     display: flex;
     flex-direction: column;
     row-gap: 25px;
+    @media screen and (max-width: 1023px) {
+        row-gap: 15px;
+    }
 `
 
 export const NavTitle = styled.p`
