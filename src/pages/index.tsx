@@ -3,6 +3,7 @@ import Head from 'next/head';
 import localFont from '@next/font/local';
 import Webinars from '@/components/webinars/webinars';
 import CallToAction from '@/components/callToAction/callToAction';
+import Footer from '@/components/footer/footer';
 
 const Jakarta_Sans = localFont({
 	src: '../../src/assets/fonts/PlusJakartaSans-VariableFont_wght.ttf',
@@ -27,6 +28,7 @@ export default function Home() {
 				<HeaderComponent />
 				<Webinars />
 				<CallToAction />
+				<Footer />
 			</main>
 		</>
 	);

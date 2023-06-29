@@ -12,7 +12,7 @@ import {
 	CTAButton,
 	CTADetails,
 	Small,
-} from './style.ts';
+} from './style';
 
 export default function CallToAction(): JSX.Element {
 	return (
@@ -21,8 +21,8 @@ export default function CallToAction(): JSX.Element {
 				<Image
 					src={infoGraph}
 					alt="Infográfico Leadster"
-					layout="fill"
-					objectFit="contain"
+					fill
+					style={{ objectFit: 'contain' }}
 				/>
 			</ImageWrapper>
 			<div>

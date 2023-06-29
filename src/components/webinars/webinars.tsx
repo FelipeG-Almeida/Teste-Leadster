@@ -12,21 +12,43 @@ import {
 import videos from '../../../videos.json';
 import VideoCard from '../videoCard/videoCard';
 import { useState } from 'react';
+import ModalComponent from '../modal/modal';
 
 export default function Webinars(): JSX.Element {
+	interface VideoType {
+		title: string;
+		description: string;
+		url: string;
+	}
+
 	const [activeButton, setActiveButton] = useState(1);
+	const [showModal, setShowModal] = useState(false);
+	const [selectedVideo, setSelectedVideo] = useState({
+		title: '',
+		description: '',
+		url: '',
+	});
 
 	function handleClickButton(index: number) {
 		setActiveButton(index);
 	}
 
+	function handleVideoClick(video: VideoType) {
+		setSelectedVideo(video);
+		setShowModal(true);
+	}
+
 	function videoList(): JSX.Element[] {
 		const videoCards = [];
 
-		for (let i = (activeButton - 1) * 9; i < (activeButton * 9); i++) {
+		for (let i = (activeButton - 1) * 9; i < activeButton * 9; i++) {
 			const video = videos[i];
 			videoCards.push(
-				<VideoCard key={video.title} description={video.description} />
+				<VideoCard
+					key={video.title}
+					description={video.description}
+					onClick={() => handleVideoClick(video)}
+				/>
 			);
 		}
 		return videoCards;
@@ -90,6 +112,14 @@ export default function Webinars(): JSX.Element {
 					4
 				</PaginationButton>
 			</Pagination>
+			{showModal && (
+				<ModalComponent
+					onClose={() => setShowModal(false)}
+					title={selectedVideo.title}
+					description={selectedVideo.description}
+					url={selectedVideo.url}
+				/>
+			)}
 		</WebinarsSection>
 	);
 }

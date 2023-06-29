@@ -8,10 +8,12 @@ export const CTASection = styled.section`
     display: flex;
     justify-content: space-between;
     padding: 25px 10%;
+	@media screen and (max-width: 1439px) {
+		padding: 75px 5%;
+	}
 `
 
 export const ImageWrapper = styled.div`
-    box-sizing: border-box;
     position: relative;
     height: 600px;
     width: 80%;
